@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Percussionstyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aladin&family=Faster+One&family=Niconne&family=Ruslan+Display&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .navbar {
+      background-color: #F4D160;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: black !important;
+    }
+
+    h1.title {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 3rem;
+      color: #333;
+    }
+
+    a {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 1rem;
+    }
+
+    section#title button,
+    footer {
+      color: #333;
+      font-family: 'Aladin', serif;
+    }
+
+    h2,
+    h2.text-body-emphasis {
+      text-align: center;
+      font-family: 'Ruslan Display', serif;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-family: 'Aladin', cursive;
+
+    }
+
+    .g-5,
+    .gx-5 {
+      --bs-gutter-x: 0;
+    }
+
+    .accordion-button {
+      background-color: wheat !important;
+      color: #000 !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: white !important;
+      color: #000 !important;
+    }
+
+    .current-sound {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Aladin', serif;
+      z-index: 1001;
+      font-size: 1.2rem;
+    }
+
+    .about-content-box.slide-down {
+      display: block;
+      animation: slideDown 0.5s forwards;
+    }
+
+    .about-content-box.slide-up {
+      animation: slideUp 0.5s forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        max-height: 0;
+        opacity: 0;
+      }
+
+      to {
+        max-height: 1000px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        max-height: 1000px;
+        opacity: 1;
+      }
+
+      to {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+
+    .about-content-box {
+      text-align: justify;
+    }
+
+    #aboutSSButton {
+      font-family: "Ruslan Display", serif;
+    }
+
+
+    .about-content-box {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F4D160;
+      border: 1px solid #333;
+      border-radius: 10px;
+      display: none;
+      max-width: 800px;
+    }
+
+    .about-content-box p,
+    li {
+      font-family: "Aladin", serif;
+    }
+
+    h3 {
+      font-family: "Aladin", serif;
+    }
+
+    .container-fluid {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    @media (max-width: 767px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 14px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 12px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #aboutSSButton {
+        font-family: "Ruslan Display", serif;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <nav class="navbar navbar-expand-lg p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./images/Logo.png" alt="" width="30" height="30" class="pb-1">
+          SOUND SAFARI
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-dark" id="aboutSSButton" style="margin-left: 10px;">User Manual</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section id="title" class="gradient-background">
+    <div class="container col-xxl-8 px-1 py-3">
+      <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+          <img src="./images/percussion collection.png"
+            class="d-block mx-lg-auto img-fluid instruments mb-md-4 mt-md-3 " alt="app demo" height="500"
+            loading="lazy">
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <h1 class="display-1 fw-bold text-body-emphasis lh-1 mb-0 mt-0 title">PERCUSSION</h1>
+        </div>
+      </div>
+      <div class="container-fluid user">
+        <div class="text-center rounded-3">
+          <div class="about-content-box" id="aboutSSContent">
+            <h2 style="margin: 0%;">Mobile and Tablet Users</h2>
+            <h3>Playing Sounds:</h3>
+            <ul class="abouT">
+              <li>Tap the "PLAY" button corresponding to the instrument you wish to hear.</li>
+              <li>Each instrument has its own "PLAY" button.</li>
+              <li>To stop the sound, tap the "Stop" button next to the currently playing instrument.</li>
+            </ul>
+            <h3>Viewing Current Sound:</h3>
+            <ul class="abouT">
+              <li>The message displayed at the bottom will update to indicate the currently playing sound or if no sound
+                is playing.</li>
+            </ul>
+            <h2 style="margin: 0%;">Desktop and Laptop Users</h2>
+            <h3>Playing Sounds with Mouse Click:</h3>
+            <ul class="abouT">
+              <li>Click on the "PLAY" button next to the instrument to play its sound.</li>
+              <li>Click the "Stop" button next to an instrument to stop the sound.</li>
+            </ul>
+            <h3>Playing Sounds with Keyboard Shortcuts:</h3>
+            <p>Press the following keys on your keyboard to play respective sounds:</p>
+            <ul class="abouT">
+              <li>p: Piano</li>
+              <li>t: Timpani</li>
+              <li>x: Xylophone</li>
+              <li>c: Cymbals</li>
+              <li>r: Triangle</li>
+              <li>s: Snare Drum</li>
+              <li>b: Bass Drum</li>
+              <li>a: Tambourine</li>
+              <li>m: Maracas</li>
+              <li>g: Gong</li>
+              <li>h: Chimes</li>
+              <li>n: Castanets</li>
+              <li>e: Celesta</li>
+            </ul>
+            <h3>Stopping Sounds:</h3>
+            <ul class="abouT">
+              <li>Click the "Stop" button next to the instrument or press any other key other than which is not in the
+                above list.</li>
+            </ul>
+            <h3>Viewing Current Sound:</h3>
+            <ul class="abouT">
+              <li>The text displayed at the bottom will show the currently playing sound or indicate when no sound is
+                playing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">
+              PIANO
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="p per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop p-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Piano is a versatile and beloved keyboard instrument which produces sound
+                through percussion (striking the keys), with a rich history dating back centuries. Its origins can be
+                traced to early harpsichords of Europe, and its name is derived from the Italian word "pianoforte,"
+                meaning "soft-loud." The piano's complex mechanism allows for a wide dynamic range, from delicate
+                pianissimos to powerful fortissimos, making it capable of expressing a vast array of emotions and
+                musical styles.
+                The piano's keyboard consists of 88 keys, arranged in seven octaves. The left hand plays the bass notes,
+                while the right hand plays the treble notes. The pedals below the keyboard can be used to sustain notes,
+                soften the sound, or add other effects.
+                The piano is a popular instrument for both solo performances and ensemble playing. It is often used to
+                accompany singers and other musicians, and it is a staple in classical, jazz, pop, and rock music. The
+                piano's versatility and expressive capabilities have made it a beloved instrument for musicians and
+                audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              TIMPANI
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="t per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop t-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Timpani is a versatile and powerful percussion instrument consisting of a
+                set of kettledrums, typically made of copper or fiberglass. Each drum is fitted with a calfskin or
+                synthetic head, which can be adjusted to produce different pitches. Timpani are played using sticks or
+                mallets, allowing for a wide range of dynamic and tonal possibilities.
+                The history of timpani dates back to ancient civilizations, where early forms of kettledrums were used
+                in religious ceremonies and military processions. The modern timpani, with their adjustable heads and
+                standardized tuning, emerged in Europe during the Renaissance period.
+                Timpani are commonly used in orchestras, concert bands, and other ensembles to provide a deep, resonant
+                bass line and rhythmic foundation. They are often used to create dramatic effects, accents, and
+                sustained tones. Timpanists must possess excellent technique, coordination, and a keen sense of pitch to
+                play the instrument effectively. The versatility and powerful sound of timpani have made them an
+                essential component of many musical compositions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              XYLOPHONE
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="x per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop x-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Xylophone is a versatile and colorful percussion instrument consisting of
+                wooden bars of varying lengths arranged like a piano keyboard. Each bar is tuned to a specific pitch,
+                and when struck with a mallet, produces a bright, clear sound. Xylophones are typically made of
+                hardwood, such as rosewood, padauk, or cocobolo, and may have resonators attached to enhance the sound.
+                The history of xylophones can be traced back to ancient cultures around the world, including Southeast
+                Asia, Africa, and Europe. Evidence of xylophone-like instruments has been found in archaeological sites
+                dating back centuries.
+                Xylophones are commonly used in orchestras, concert bands, and other ensembles to provide a bright,
+                melodic accompaniment. They are often used to create rhythmic patterns, melodies, and accents.
+                Xylophones are also popular instruments for children's music education, as they are relatively easy to
+                learn and can be used to teach pitch recognition and rhythm. The versatility and bright, cheerful sound
+                of xylophones have made them a beloved instrument for musicians and audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+              aria-expanded="false" aria-controls="collapseFour">
+              CYMBALS
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="c per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop c-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Cymbals is a versatile percussion instruments consisting of two large,
+                circular discs made of metal, typically bronze or brass. They are played by striking them together or
+                against a surface, producing a loud, metallic sound. Cymbals come in various sizes and shapes, each with
+                its own unique sound characteristics.
+                The history of cymbals dates back thousands of years, with evidence of their use found in ancient
+                civilizations around the world. Cymbals were originally used in religious ceremonies, military
+                processions, and other ceremonial events. Today, they are an essential component of many musical genres,
+                including classical, jazz, rock, pop, and world music.
+                Cymbals are played using sticks or mallets, and the technique used can greatly affect the sound
+                produced. Some common cymbal playing techniques include striking the cymbals together, striking one
+                cymbal against another, and striking a cymbal against a surface. Cymbals come in a wide variety of sizes
+                and shapes, each with its own unique sound characteristics.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+              aria-expanded="false" aria-controls="collapseFive">
+              TRIANGLE
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="r per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop r-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Triangle is a small, percussion instrument consisting of a thin, rigid
+                metal rod bent into a triangle shape. It is typically played by striking the triangle with a metal
+                beater, producing a high-pitched, ringing sound. Triangles come in various sizes and shapes, each with
+                its own unique sound characteristics.
+                The history of triangles dates back to ancient civilizations, with evidence of their use found in
+                various cultures around the world. Triangles were originally used in ceremonial and military events, and
+                they later became popular in orchestral music during the Baroque period.
+                Triangles are commonly used in orchestras, concert bands, and other ensembles to provide a bright,
+                metallic accent. They are often used to emphasize rhythmic patterns, highlight melodic lines, and create
+                a sense of excitement or tension. Triangles are relatively easy to play and can be used to add a unique
+                and colorful element to any musical composition.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
+              aria-expanded="false" aria-controls="collapseSix">
+              SNARE DRUM
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="s per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop s-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Snare drum is a versatile percussion instrument consisting of a shallow
+                drum with a head on both sides. The bottom head is fitted with metal wires, called snares, that vibrate
+                against the head when the drum is struck, producing a sharp, crisp sound. Snare drums come in various
+                sizes and shapes, each with its own unique sound characteristics.
+                The history of snare drums dates back to ancient civilizations, with evidence of their use found in
+                various cultures around the world. Early forms of snare drums were made of wood, metal, or animal skins,
+                and they were used in military and ceremonial events. The modern snare drum, with its metal shell and
+                adjustable snare wires, emerged during the 18th century.
+                Snare drums are a staple instrument in drum sets and are used in a wide variety of musical genres,
+                including rock, pop, jazz, and classical. They are often used to provide a rhythmic foundation, accents,
+                and fills. Snare drummers must possess excellent technique, coordination, and a keen sense of rhythm to
+                play the instrument effectively. The versatility and expressive capabilities of snare drums have made
+                them an essential component of many musical ensembles.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+              aria-expanded="false" aria-controls="collapseSeven">
+              BASS DRUM
+            </button>
+          </h2>
+          <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="b per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop b-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Bass drum is a large, deep-sounding percussion instrument consisting of a
+                cylindrical shell with a drumhead on one or both ends. Bass drums are played using sticks or mallets,
+                and the sound is produced by striking the drumhead. They are typically used to provide a deep, resonant
+                bass line and rhythmic foundation in a variety of musical genres.
+                The history of bass drums dates back to ancient civilizations, where early forms of drums were used in
+                religious ceremonies, military processions, and other events. The modern bass drum, with its large size
+                and adjustable tension, emerged during the 18th century.
+                Bass drums are a staple instrument in drum sets and are used in a wide variety of musical genres,
+                including rock, pop, jazz, and classical. They are often used to provide a driving rhythm, accents, and
+                fills. Bass drummers must possess excellent technique, coordination, and a keen sense of rhythm to play
+                the instrument effectively. The versatility and powerful sound of bass drums have made them an essential
+                component of many musical ensembles.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight"
+              aria-expanded="false" aria-controls="collapseEight">
+              TAMBOURINE
+            </button>
+          </h2>
+          <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="a per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop a-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Tambourine is a percussion instrument consisting of a shallow drum with
+                jingles attached to the frame. The jingles are typically made of metal and produce a bright, metallic
+                sound when the tambourine is shaken or struck. Tambourines come in various sizes and shapes, and the
+                number and arrangement of jingles can vary.
+                The history of tambourines dates back to ancient civilizations, with evidence of their use found in
+                various cultures around the world. Tambourines were originally used in religious ceremonies, folk
+                dances, and other cultural events. Today, they are a popular instrument in many musical genres,
+                including world music, jazz, rock, and pop.
+                Tambourines are played by shaking, striking, or strumming the drumhead. The jingles produce a
+                distinctive, rhythmic sound that can add a percussive element to any musical composition. Tambourines
+                are often used to provide a rhythmic accompaniment, accents, and fills. Their versatility and
+                portability have made them a popular instrument for musicians of all levels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseNine"
+              aria-expanded="false" aria-controls="collapseNine">
+              MARACAS
+            </button>
+          </h2>
+          <div id="collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="m per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop m-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Maracas is a percussion instrument consisting of a gourd or other hollow
+                container filled with loose objects, such as seeds, beads, or pebbles. The objects rattle inside the
+                container when the maracas are shaken, producing a rhythmic sound. Maracas come in various sizes and
+                shapes, and the type and amount of filling can affect the sound produced.
+                The history of maracas dates back to ancient civilizations in the Americas, where they were used in
+                religious ceremonies, folk dances, and other cultural events. Maracas are a popular instrument in Latin
+                American music, such as salsa, merengue, and cumbia, but they are also used in other genres, including
+                world music, jazz, and pop.
+                Maracas are played by shaking them, and the rhythmic sound produced by the rattling objects can add a
+                percussive element to any musical composition. Maracas are often used to provide a rhythmic
+                accompaniment, accents, and fills. Their versatility and portability have made them a popular instrument
+                for musicians of all levels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTen"
+              aria-expanded="false" aria-controls="collapseTen">
+              GONG
+            </button>
+          </h2>
+          <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="g per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop g-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Gong is a large, circular percussion instrument made of metal, typically
+                bronze or brass. It produces a deep, resonant sound when struck with a mallet. Gongs come in various
+                sizes and shapes, each with its own unique sound characteristics.
+                The history of gongs dates back to ancient civilizations in Asia, where they were used in religious
+                ceremonies, military processions, and other events. Gongs are a popular instrument in many Asian
+                cultures, including Chinese, Japanese, and Indian.
+                Gongs are played by striking them with a mallet, and the sound produced can vary depending on the size,
+                shape, and material of the gong. Gongs are often used to create a dramatic or atmospheric effect in
+                music, theater, and film. Their deep, resonant sound can add a sense of grandeur or mystery to any
+                composition.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven"
+              aria-expanded="false" aria-controls="collapseEleven">
+              CHIMES
+            </button>
+          </h2>
+          <div id="collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="h per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop h-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Chimes is a percussion instruments consisting of a series of metal tubes
+                or bells suspended from a frame. The tubes or bells are tuned to different pitches, and when struck with
+                a mallet, they produce a bright, ringing sound. Chimes come in various sizes and shapes, and the number
+                and arrangement of tubes or bells can vary.
+                The history of chimes dates back to ancient civilizations, with evidence of their use found in various
+                cultures around the world. Chimes were originally used in religious ceremonies, military processions,
+                and other cultural events. Today, chimes are a popular instrument in many musical genres, including
+                classical, new age, and ambient.
+                Chimes are played by striking the tubes or bells with a mallet, and the sound produced can vary
+                depending on the size, shape, and material of the chimes. Chimes are often used to create a peaceful,
+                meditative atmosphere. Their versatility and portability have made them a popular instrument for
+                musicians of all levels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwelve"
+              aria-expanded="false" aria-controls="collapseTwelve">
+              CASTANETS
+            </button>
+          </h2>
+          <div id="collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="n per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop n-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Castanets is a percussion instrument consisting of a pair of small, hollow
+                shells, typically made of wood or plastic, that are held in the hand and clicked together to produce a
+                sharp, rhythmic sound. Castanets are often used in pairs, but they can also be played individually.
+                The history of castanets dates back to ancient civilizations in the Mediterranean region, where they
+                were used in dance and music performances. Castanets are a popular instrument in Spanish flamenco music
+                and other Latin American genres, but they are also used in various other styles of music.
+                Castanets are played by holding them in the hand and clicking them together with a quick, rhythmic
+                motion. The sound produced can vary depending on the size, shape, and material of the castanets.
+                Castanets are often used to provide a percussive accompaniment, accents, and fills. Their versatility
+                and portability have made them a popular instrument for musicians of all levels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThirteen"
+              aria-expanded="false" aria-controls="collapseThirteen">
+              CELESTA
+            </button>
+          </h2>
+          <div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="e per" style="color: #60f4d1;">PLAY</button>
+              <button class="stop e-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Celesta is a keyboard percussion instrument that produces a high-pitched,
+                bell-like sound. It consists of a series of tuned metal plates that are struck by hammers activated by a
+                keyboard. The celesta is often used in orchestral music to create a shimmering, ethereal effect.
+                The history of the celesta dates back to the 19th century, when it was invented by Victor Mustel. The
+                celesta quickly gained popularity among composers due to its unique sound and versatility.
+                The celesta is typically played with a mallet made of hard rubber or wood. The sound produced by the
+                celesta can vary depending on the force with which the keys are struck and the type of mallet used. The
+                celesta is often used in orchestral music to accompany other instruments, create atmospheric effects, or
+                play solo melodies. Its distinctive sound has made it a popular instrument in many musical genres,
+                including classical, jazz, and pop.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="current-sound">No sound is playing</div>
+
+
+      <footer>UJWAL M L ✏️</footer>
+  </section>
+
+  <script>
+    var sounds = {};
+    var currentSound = null;
+
+
+    for (var i = 0; i < document.querySelectorAll(".per").length; i++) {
+      document
+        .querySelectorAll(".per")
+      [i].addEventListener("click", function () {
+        var buttonClass = this.classList[0];
+        makesound(buttonClass);
+        buttonAnimation(buttonClass);
+      });
+    }
+
+
+    for (var i = 0; i < document.querySelectorAll(".stop").length; i++) {
+      document
+        .querySelectorAll(".stop")
+      [i].addEventListener("click", function () {
+        var stopClass = this.classList[1].split("-")[0];
+        stopSound(stopClass);
+      });
+    }
+
+
+    document.addEventListener("keypress", function (event) {
+      makesound(event.key);
+      buttonAnimation(event.key);
+    });
+
+    function makesound(key) {
+
+      if (currentSound) {
+        currentSound.pause();
+        currentSound.currentTime = 0;
+      }
+
+
+      if (sounds[key]) {
+        sounds[key].pause();
+        sounds[key].currentTime = 0;
+      }
+      var soundName = "";
+
+      switch (key) {
+        case "p":
+          sounds[key] = new Audio("./Percussion/piano.mp3");
+          soundName = "Piano";
+          break;
+        case "t":
+          sounds[key] = new Audio("./Percussion/timpani.mp3");
+          soundName = "Timpani";
+          break;
+        case "x":
+          sounds[key] = new Audio("./Percussion/xylophone.mp3");
+          soundName = "Xylophone";
+          break;
+        case "c":
+          sounds[key] = new Audio("./Percussion/cymbals.mp3");
+          soundName = "Cymbals";
+          break;
+        case "r":
+          sounds[key] = new Audio("./Percussion/triangle.mp3");
+          soundName = "Triangle";
+          break;
+        case "s":
+          sounds[key] = new Audio("./Percussion/snare-drum.mp3");
+          soundName = "Snare Drum";
+          break;
+        case "b":
+          sounds[key] = new Audio("./Percussion/bass-drum.mp3");
+          soundName = "Bass Drum";
+          break;
+        case "a":
+          sounds[key] = new Audio("./Percussion/tambourine.mp3");
+          soundName = "Tambourine";
+          break;
+        case "m":
+          sounds[key] = new Audio("./Percussion/maracas.mp3");
+          soundName = "Maracas";
+          break;
+        case "g":
+          sounds[key] = new Audio("./Percussion/gong.mp3");
+          soundName = "Gong";
+          break;
+        case "h":
+          sounds[key] = new Audio("./Percussion/chimes.mp3");
+          soundName = "Chimes";
+          break;
+        case "n":
+          sounds[key] = new Audio("./Percussion/castanets.mp3");
+          soundName = "Castanets";
+          break;
+        case "e":
+          sounds[key] = new Audio("./Percussion/celesta.mp3");
+          soundName = "Celesta";
+          break;
+        default:
+
+          if (currentSound) {
+            currentSound.pause();
+            currentSound.currentTime = 0;
+          }
+          currentSound = null;
+          document.querySelector(".current-sound").textContent = "No sound is playing";
+          return;
+      }
+
+
+      currentSound = sounds[key];
+      currentSound.play();
+
+      document.querySelector(".current-sound").textContent = "Now playing: " + soundName;
+
+
+      currentSound.addEventListener("ended", function () {
+        document.querySelector(".current-sound").textContent = "No sound is playing";
+      });
+    }
+
+
+    function stopSound(key) {
+      if (sounds[key]) {
+        sounds[key].pause();
+        sounds[key].currentTime = 0;
+
+
+        if (currentSound === sounds[key]) {
+          document.querySelector(".current-sound").textContent = "No sound is playing";
+          currentSound = null;
+        }
+      }
+    }
+
+
+    function buttonAnimation(currentKey) {
+      var activeButton = document.querySelector("." + currentKey);
+      if (activeButton) {
+        activeButton.classList.add("pressed");
+
+        setTimeout(function () {
+          activeButton.classList.remove("pressed");
+        }, 100);
+      }
+    }
+  </script>
+  <script>
+
+    const aboutSSButton = document.getElementById('aboutSSButton');
+    const aboutSSContent = document.getElementById('aboutSSContent');
+
+    aboutSSButton.addEventListener('click', () => {
+
+      const isVisible = aboutSSContent.style.display === 'block';
+
+      if (isVisible) {
+
+        aboutSSContent.classList.remove('slide-down');
+        aboutSSContent.classList.add('slide-up');
+
+
+        aboutSSContent.addEventListener('animationend', () => {
+          aboutSSContent.style.display = 'none';
+        }, { once: true });
+      } else {
+
+        aboutSSContent.style.display = 'block';
+        aboutSSContent.classList.remove('slide-up');
+        aboutSSContent.classList.add('slide-down');
+
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const aboutSSContentPosition = aboutSSContent.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: aboutSSContentPosition - navbarHeight,
+          behavior: 'smooth',
+        });
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

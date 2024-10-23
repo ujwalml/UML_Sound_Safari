@@ -1,0 +1,64 @@
+html {
+  overflow-x: hidden;
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: #283149;
+  padding-top: 70px;
+  overflow-x: hidden;
+}
+
+h1 {
+  font-family: "Ruslan Display", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: aliceblue;
+  font-size: 100px;
+}
+
+
+.gradient-background {
+  background: linear-gradient(300deg, #d160f4, #f4d160, #60f4d1);
+  background-size: 180% 180%;
+  animation: gradient-animation 2s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.instruments {
+  animation: up-down 1.5s ease-in-out infinite alternate-reverse both;
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(30px);
+  }
+
+  100% {
+    transform: translateY(-20px);
+  }
+}
+
+footer {
+  color: #dbedf3;
+  font-family: sans-serif;
+}

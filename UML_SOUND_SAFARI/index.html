@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+  <title>SOUND SAFARI</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aladin&family=Faster+One&family=Niconne&family=Ruslan+Display&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .navbar {
+      background-color: #F4D160;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: black !important;
+    }
+
+    h1.title {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 3rem;
+      color: #333;
+    }
+
+    a {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+    }
+
+    section#title button,
+    footer,
+    .card-title,
+    .card-text,
+    .card-title a {
+      color: #333;
+      font-family: 'Aladin', serif;
+    }
+
+    .card-title,
+    .card-title a {
+      text-decoration: underline;
+    }
+
+
+    h2.text-body-emphasis,
+    .caption {
+      text-align: center;
+      font-family: 'Ruslan Display', serif;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-family: 'Aladin', cursive;
+
+    }
+
+    .g-5,
+    .gx-5 {
+      --bs-gutter-x: 0;
+    }
+
+    .custom-btn {
+      border: 1px solid #333;
+    }
+
+    .custom-btn:hover {
+      background-color: white;
+    }
+
+    .about-content-box.slide-down {
+      display: block;
+      animation: slideDown 0.5s forwards;
+    }
+
+    .about-content-box.slide-up {
+      animation: slideUp 0.5s forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        max-height: 0;
+        opacity: 0;
+      }
+
+      to {
+        max-height: 1000px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        max-height: 1000px;
+        opacity: 1;
+      }
+
+      to {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+
+    .about-content-box {
+      text-align: justify;
+    }
+
+    #aboutSSButton {
+      font-family: "Ruslan Display", serif;
+    }
+
+    .card img {
+      width: 100%;
+      height: 500px;
+      object-fit: cover;
+    }
+
+    .about-content-box {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F4D160;
+      border: 1px solid #333;
+      border-radius: 10px;
+      display: none;
+      max-width: 800px;
+    }
+
+    .about-content-box p,
+    li {
+      font-family: "Aladin", serif;
+    }
+
+    .container-fluid {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    @media (max-width: 425px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 14px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #aboutSSButton {
+        font-family: "Ruslan Display", serif;
+        margin-bottom: 20px;
+      }
+    }
+
+    @media (min-width: 2560px) {
+      h1.title {
+        font-size: 4.5rem;
+      }
+
+      .container.col-xxl-8 {
+        max-width: 90%;
+      }
+
+      .about-content-box {
+        max-width: 1200px;
+        font-size: 1.3rem;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 1.25rem;
+      }
+
+      .card img {
+        height: 600px;
+      }
+
+      .caption,
+      .text-body-emphasis {
+        font-size: 3rem;
+      }
+
+      .custom-btn {
+        padding: 15px 30px;
+        font-size: 1.5rem;
+      }
+
+      footer {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <nav class="navbar navbar-expand-lg p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images/Logo.png" alt="" width="30" height="30" class="pb-1">
+          SOUND SAFARI
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-dark" id="aboutSSButton" style="margin-left: 10px;">About SS</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+
+  <section id="title" class="gradient-background">
+    <div class="container col-xxl-8 px-1 py-3">
+      <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+          <img src="./images/Musical_Instruments.png" class="d-block mx-lg-auto img-fluid instruments" alt="app demo"
+            height="500" loading="lazy">
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <h1 class="display-1 fw-bold text-body-emphasis lh-1 mb-3 mt-0 title">SOUND SAFARI</h1>
+          <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <div class="row">
+              <div class="col-12 col-md-6 mb-2">
+                <button class="btn gradient-background btn-outline-light w-100 custom-btn" type="button"
+                  onclick="window.location.href='Percussionn.html';">PERCUSSION</button>
+              </div>
+              <div class="col-12 col-md-6 mb-2">
+                <button class="btn gradient-background btn-outline-light w-100 custom-btn" type="button"
+                  onclick="window.location.href='Woodwindss.html';">WOODWINDS</button>
+              </div>
+              <div class="col-12 col-md-6 mb-2">
+                <button class="btn gradient-background btn-outline-light  w-100 custom-btn" type="button"
+                  onclick="window.location.href='Stringg.html';">STRINGS</button>
+              </div>
+              <div class="col-12 col-md-6 mb-2">
+                <button class="btn gradient-background btn-outline-light w-100 custom-btn" type="button"
+                  onclick="window.location.href='Brasss.html';">BRASS</button>
+              </div>
+              <div class="col-12 mb-2">
+                <button class="btn gradient-background btn-outline-light w-100 custom-btn" type="button"
+                  onclick="window.location.href='Keyboardd.html';">KEYBOARD</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid user">
+        <div class="text-center rounded-3">
+          <div class="about-content-box" id="aboutSSContent">
+            <h2 class="text-body-emphasis">About SS</h2>
+            <p>SOUND SAFARI is an interactive web-based musical experience designed to take users on a fascinating
+              journey through the rich and diverse world of musical instruments. This project offers an educational and
+              entertaining way to explore different instrument families and their unique sounds.</p>
+            <p>In SOUND SAFARI, users can discover and experience 38 distinct musical instruments, spread across several
+              categories:</p>
+            <ul>
+              <li>13 Percussion Instruments</li>
+              <li>8 Woodwind Instruments</li>
+              <li>5 String Instruments</li>
+              <li>4 Brass Instruments</li>
+              <li>8 Keyboard Instruments</li>
+            </ul>
+            <p>Each section features a visually appealing interface, where users can explore the instruments by either
+              clicking on them or using keyboard shortcuts to hear their distinct sounds. This intuitive design provides
+              an immersive and engaging way to experience the variety of sounds that each instrument family produces.
+            </p>
+            <p><strong>Key Features:</strong></p>
+            <ul>
+              <li>Wide Variety of Instruments: Explore 38 different instruments, each with its own unique sound and
+                characteristics.</li>
+              <li>Interactive Interface: Seamlessly navigate between instrument families, play sounds in real-time, and
+                engage with each instrument’s audio.</li>
+              <li>Educational Tool: Perfect for anyone interested in learning more about the structure, sound, and
+                history of musical instruments.</li>
+              <li>Responsive Design: Built using modern web technologies like Bootstrap, ensuring smooth performance on
+                desktops, tablets, and mobile devices.</li>
+            </ul>
+            <p>SOUND SAFARI offers an interactive, fun, and educational platform to explore 🎵 like never before.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="caption">Dive into the world of music and let the tune play</h2>
+      <h2 class="caption">Developer's Overview</h2>
+      <div class="card-group">
+        <div class="card">
+          <img src="./images/MY_PHOTO_BG.png" class="card-img-top" alt="MY_PHOTO_BG">
+          <div class="card-body">
+            <h5 class="card-title">UJWAL M L</h5>
+            <p class="card-text">Developer & Creator of Sound Safari. Creating innovative solutions to make learning
+              about music fun and accessible.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/My drawing.jpg" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title"><a
+                href="https://www.instagram.com/comrade_arts03/profilecard/?igsh=YmF2ODJ6cjc4MThx">REALISTIC PORTRAIT
+                ARTIST</a></h5>
+            <p class="card-text">Self-taught and driven, creating lifelike portraits that speak volumes. Bringing
+              portraits to life with the magic of hyper-realism.</p>
+          </div>
+        </div>
+        <div class="card">
+          <img src="./images/Logo.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">LOGO OF SOUND SAFARI</h5>
+            <p class="card-text">Your sonic adventure starts here. Dive into the world of music and let the tune play
+            </p>
+          </div>
+        </div>
+      </div>
+      <footer>
+        <p>&copy; 2024 Sound Safari. All Rights Reserved.</p>
+        <p>Designed and Developed by: UJWAL M L</p>🎵✏️
+      </footer>
+  </section>
+  <script>
+
+    const aboutSSButton = document.getElementById('aboutSSButton');
+    const aboutSSContent = document.getElementById('aboutSSContent');
+
+    aboutSSButton.addEventListener('click', () => {
+
+      const isVisible = aboutSSContent.style.display === 'block';
+
+      if (isVisible) {
+
+        aboutSSContent.classList.remove('slide-down');
+        aboutSSContent.classList.add('slide-up');
+
+
+        aboutSSContent.addEventListener('animationend', () => {
+          aboutSSContent.style.display = 'none';
+        }, { once: true });
+      } else {
+
+        aboutSSContent.style.display = 'block';
+        aboutSSContent.classList.remove('slide-up');
+        aboutSSContent.classList.add('slide-down');
+
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const aboutSSContentPosition = aboutSSContent.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: aboutSSContentPosition - navbarHeight,
+          behavior: 'smooth',
+        });
+      }
+    });
+
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

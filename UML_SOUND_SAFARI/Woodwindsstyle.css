@@ -1,0 +1,135 @@
+  .f.wood {
+    background-image: url('./images/flute.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .f.wood:hover {
+    opacity: 0.9;
+  }
+
+  .p.wood {
+    background-image: url('./images/piccolo.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .p.wood:hover {
+    opacity: 0.9;
+  }
+
+  .o.wood {
+    background-image: url('./images/oboe.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .o.wood:hover {
+    opacity: 0.9;
+  }
+
+  .e.wood {
+    background-image: url('./images/english\ horn.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .e.wood:hover {
+    opacity: 0.9;
+  }
+
+  .c.wood {
+    background-image: url('./images/clarinet.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .c.wood:hover {
+    opacity: 0.9;
+  }
+
+  .b.wood {
+    background-image: url('./images/bass\ clarinet.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .b.wood:hover {
+    opacity: 0.9;
+  }
+
+  .a.wood {
+    background-image: url('./images/bassoon.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .a.wood:hover {
+    opacity: 0.9;
+  }
+
+  .n.wood {
+    background-image: url('./images/contrabassoon.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .n.wood:hover {
+    opacity: 0.9;
+  }

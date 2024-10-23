@@ -1,0 +1,220 @@
+  .p.per {
+    background-image: url('./images/piano.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .p.per:hover {
+    opacity: 0.9;
+  }
+
+  .t.per {
+    background-image: url('./images/timpani.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .t.per:hover {
+    opacity: 0.9;
+  }
+
+  .x.per {
+    background-image: url('./images/xylophone.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .x.per:hover {
+    opacity: 0.9;
+  }
+
+  .c.per {
+    background-image: url('./images/cymbals.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .c.per:hover {
+    opacity: 0.9;
+  }
+
+  .r.per {
+    background-image: url('./images/triangle.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .r.per:hover {
+    opacity: 0.9;
+  }
+
+  .s.per {
+    background-image: url('./images/snare.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .s.per:hover {
+    opacity: 0.9;
+  }
+
+  .b.per {
+    background-image: url('./images/bass\ drum.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .b.per:hover {
+    opacity: 0.9;
+  }
+
+  .a.per {
+    background-image: url('./images/tambourine.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .a.per:hover {
+    opacity: 0.9;
+  }
+
+  .m.per {
+    background-image: url('./images/maracas.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .m.per:hover {
+    opacity: 0.9;
+  }
+
+  .g.per {
+    background-image: url('./images/gong.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .g.per:hover {
+    opacity: 0.9;
+  }
+
+  .h.per {
+    background-image: url('./images/chimes.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .h.per:hover {
+    opacity: 0.9;
+  }
+
+  .n.per {
+    background-image: url('./images/castanets.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .n.per:hover {
+    opacity: 0.9;
+  }
+
+  .e.per {
+    background-image: url('./images/celesta.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 5rem;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .e.per:hover {
+    opacity: 0.9;
+  }

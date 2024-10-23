@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+  <title>BRASS</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Brassstyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aladin&family=Faster+One&family=Niconne&family=Ruslan+Display&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .navbar {
+      background-color: #F4D160;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+    .navbar a {
+      color: black !important;
+    }
+
+
+    h1.title,
+    footer {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 3rem;
+      color: #333;
+    }
+
+    a {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 1rem;
+    }
+
+    section#title button,
+    footer {
+      color: #333;
+      font-family: 'Aladin', serif;
+    }
+
+    h2,
+    h2.text-body-emphasis {
+      text-align: center;
+      font-family: 'Ruslan Display', serif;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-family: 'Aladin', cursive;
+
+    }
+
+    .g-5,
+    .gx-5 {
+      --bs-gutter-x: 0;
+    }
+
+    .accordion-button {
+      background-color: wheat !important;
+      color: #000 !important;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background-color: white !important;
+      color: #000 !important;
+    }
+
+    .current-sound {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Aladin', serif;
+      z-index: 1001;
+      font-size: 1.2rem;
+    }
+
+    .about-content-box.slide-down {
+      display: block;
+      animation: slideDown 0.5s forwards;
+    }
+
+    .about-content-box.slide-up {
+      animation: slideUp 0.5s forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        max-height: 0;
+        opacity: 0;
+      }
+
+      to {
+        max-height: 1000px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        max-height: 1000px;
+        opacity: 1;
+      }
+
+      to {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+
+    .about-content-box {
+      text-align: justify;
+    }
+
+    #aboutSSButton {
+      font-family: "Ruslan Display", serif;
+    }
+
+    .about-content-box {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F4D160;
+      border: 1px solid #333;
+      border-radius: 10px;
+      display: none;
+      max-width: 800px;
+    }
+
+    .about-content-box p,
+    li {
+      font-family: "Aladin", serif;
+    }
+
+    h3 {
+      font-family: "Aladin", serif;
+    }
+
+    .container-fluid {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    @media (max-width: 767px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 14px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 12px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #aboutSSButton {
+        font-family: "Ruslan Display", serif;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <nav class="navbar navbar-expand-lg p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./images/Logo.png" alt="" width="30" height="30" class="pb-1">
+          SOUND SAFARI
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-dark" id="aboutSSButton" style="margin-left: 10px;">User Manual</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section id="title" class="gradient-background">
+    <div class="container col-xxl-8 px-1 py-3">
+      <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+          <img src="./images/brass collection.png" class="d-block mx-lg-auto img-fluid instruments mb-md-4 mt-md-3 "
+            alt="app demo" height="500" loading="lazy">
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <h1 class="display-1 fw-bold text-body-emphasis lh-1 mb-0 mt-0 title">BRASS</h1>
+        </div>
+      </div>
+      <div class="container-fluid user">
+        <div class="text-center rounded-3">
+          <div class="about-content-box" id="aboutSSContent">
+            <h2 style="margin: 0%;">Mobile and Tablet Users</h2>
+            <h3>Playing Sounds:</h3>
+            <ul class="abouT">
+              <li>Tap the "PLAY" button corresponding to the instrument you want to hear.</li>
+              <li>Each instrument has its own "PLAY" button.</li>
+              <li>To stop the sound, tap the "Stop" button next to the currently playing instrument.</li>
+            </ul>
+            <h3>Viewing Current Sound:</h3>
+            <ul class="abouT">
+              <li>The message displayed at the bottom will update to indicate the currently playing sound or if no sound
+                is playing.</li>
+            </ul>
+            <h2 style="margin: 0%;">Desktop and Laptop Users</h2>
+            <h3>Playing Sounds with Mouse Click:</h3>
+            <ul class="abouT">
+              <li>Click on the "PLAY" button next to the instrument to play its sound.</li>
+              <li>Click the "Stop" button next to an instrument to stop the sound.</li>
+            </ul>
+            <h3>Playing Sounds with Keyboard Shortcuts:</h3>
+            <p>Press the following keys on your keyboard to play respective sounds:</p>
+            <ul class="abouT">
+              <li>t: Trumpet</li>
+              <li>f: French Horn</li>
+              <li>r: Trombone</li>
+              <li>u: Tuba</li>
+            </ul>
+            <h3>Stopping Sounds:</h3>
+            <ul class="abouT">
+              <li>Click the "Stop" button next to the instrument or press any other key that is not in the above list.
+              </li>
+            </ul>
+            <h3>Viewing Current Sound:</h3>
+            <ul class="abouT">
+              <li>The text displayed at the bottom will show the currently playing sound or indicate when no sound is
+                playing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">
+              TRUMPET
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="t brass" style="color: #60f4d1;">PLAY</button>
+              <button class="stop t-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Trumpet is a brass instrument known for its bright, powerful sound. It
+                consists of a long, coiled tube with a mouthpiece and a bell. Trumpets are typically made of brass or
+                other metals and are played by blowing into the mouthpiece and manipulating the valves to produce
+                different pitches.
+                The history of the trumpet dates back thousands of years, with evidence of trumpet-like instruments
+                found in ancient civilizations around the world. The modern trumpet, with its distinctive shape and
+                construction, emerged in Europe during the Renaissance period.
+                The trumpet is a versatile instrument that is used in a wide variety of musical genres, including
+                classical, jazz, rock, pop, and military music. It is often used to play melodies, harmonies, and
+                rhythms, and it is capable of producing a wide range of sounds from soft and lyrical to loud and
+                powerful. The trumpet's expressive capabilities and versatility have made it a beloved instrument for
+                musicians and audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              FRENCH HORN
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="f brass" style="color: #60f4d1;">PLAY</button>
+              <button class="stop f-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">French horn is a brass instrument known for its rich, warm sound. It
+                consists of a long, coiled tube with a circular bell. French horns are typically made of brass or other
+                metals and are played by blowing into the mouthpiece and manipulating the valves to produce different
+                pitches.
+                The history of the French horn can be traced back to ancient civilizations, where early forms of
+                horn-like instruments were used in hunting and signaling. The modern French horn, with its distinctive
+                shape and construction, emerged in Europe during the Renaissance period.
+                The French horn is a versatile instrument that is used in a wide variety of musical genres, including
+                classical, jazz, rock, and pop. It is often used to play melodies, harmonies, and rhythms, and it is
+                capable of producing a wide range of sounds from soft and lyrical to loud and powerful. The French
+                horn's expressive capabilities and versatility have made it a beloved instrument for musicians and
+                audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              TROMBONE
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="r brass" style="color: #60f4d1;">PLAY</button>
+              <button class="stop r-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Trombone is a brass instrument known for its versatile and expressive
+                sound. It consists of a long, coiled tube with a bell and a slide that can be extended and retracted to
+                change the pitch. Trombones are typically made of brass or other metals and are played by blowing into
+                the mouthpiece and manipulating the slide.
+                The history of the trombone can be traced back to ancient civilizations, where early forms of
+                trombone-like instruments were used in military and ceremonial events. The modern trombone, with its
+                distinctive shape and construction, emerged in Europe during the Renaissance period.
+                The trombone is a versatile instrument that is used in a wide variety of musical genres, including
+                classical, jazz, rock, pop, and military music. It is often used to play melodies, harmonies, and
+                rhythms, and it is capable of producing a wide range of sounds from soft and lyrical to loud and
+                powerful. The trombone's expressive capabilities and versatility have made it a beloved instrument for
+                musicians and audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+              aria-expanded="false" aria-controls="collapseFour">
+              TUBA
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="u brass" style="color: #60f4d1;">PLAY</button>
+              <button class="stop u-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Tuba is the largest member of the brass instrument family and is known for
+                its deep, powerful sound. It consists of a long, coiled tube with a large bell. Tubas are typically made
+                of brass or other metals and are played by blowing into the mouthpiece and manipulating the valves to
+                produce different pitches.
+                The history of the tuba dates back to the 18th century, when it was first developed as a way to extend
+                the range of the brass instrument family. The tuba quickly gained popularity in orchestras, bands, and
+                military music.
+                The tuba is a versatile instrument that is used in a wide variety of musical genres, including
+                classical, jazz, rock, and pop. It is often used to provide a deep, anchoring bass line and rhythmic
+                foundation. The tuba's expressive capabilities and powerful sound have made it a beloved instrument for
+                musicians and audiences alike.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="current-sound">No sound is playing</div>
+      <footer>UJWAL M L ✏️</footer>
+  </section>
+  <script>
+    var sounds = {};
+    var currentSound = null;
+
+    
+    for (var i = 0; i < document.querySelectorAll(".brass").length; i++) {
+      document
+        .querySelectorAll(".brass")
+      [i].addEventListener("click", function () {
+        var buttonClass = this.classList[0]; 
+        makesound(buttonClass);
+        buttonAnimation(buttonClass);
+      });
+    }
+
+    
+    for (var i = 0; i < document.querySelectorAll(".stop").length; i++) {
+      document
+        .querySelectorAll(".stop")
+      [i].addEventListener("click", function () {
+        var stopClass = this.classList[1].split("-")[0]; 
+        stopSound(stopClass); 
+      });
+    }
+
+    
+    document.addEventListener("keypress", function (event) {
+      makesound(event.key);
+      buttonAnimation(event.key);
+    });
+
+    function makesound(key) {
+      
+      if (currentSound) {
+        currentSound.pause();
+        currentSound.currentTime = 0;
+      }
+
+      
+      if (sounds[key]) {
+        sounds[key].pause();
+        sounds[key].currentTime = 0;
+      }
+      var soundName = ""; 
+
+      switch (key) {
+        case "t":
+          sounds[key] = new Audio("./Brass/trumpet.mp3");
+          soundName = "Trumpet";
+          break;
+        case "f":
+          sounds[key] = new Audio("./Brass/french horn.mp3");
+          soundName = "French Horn";
+          break;
+        case "r":
+          sounds[key] = new Audio("./Brass/trombone.mp3");
+          soundName = "Trombone";
+          break;
+        case "u":
+          sounds[key] = new Audio("./Brass/tuba.mp3");
+          soundName = "Tuba";
+          break;
+        default:
+          
+          if (currentSound) {
+            currentSound.pause();
+            currentSound.currentTime = 0;
+          }
+          currentSound = null; 
+          document.querySelector(".current-sound").textContent = "No sound is playing";
+          return;
+      }
+
+      
+      currentSound = sounds[key];
+      currentSound.play();
+      document.querySelector(".current-sound").textContent = "Now playing: " + soundName;
+
+      
+      currentSound.addEventListener("ended", function () {
+        document.querySelector(".current-sound").textContent = "No sound is playing";
+      });
+    }
+
+    
+    function stopSound(key) {
+      if (sounds[key]) {
+        sounds[key].pause(); 
+        sounds[key].currentTime = 0; 
+        
+        if (currentSound === sounds[key]) {
+          document.querySelector(".current-sound").textContent = "No sound is playing";
+          currentSound = null; 
+        }
+      }
+    }
+
+   
+    function buttonAnimation(currentKey) {
+      var activeButton = document.querySelector("." + currentKey);
+      if (activeButton) {
+        activeButton.classList.add("pressed");
+
+        setTimeout(function () {
+          activeButton.classList.remove("pressed");
+        }, 100);
+      }
+    }
+  </script>
+  <script>
+    
+    const aboutSSButton = document.getElementById('aboutSSButton');
+    const aboutSSContent = document.getElementById('aboutSSContent');
+
+    aboutSSButton.addEventListener('click', () => {
+      
+      const isVisible = aboutSSContent.style.display === 'block';
+
+      if (isVisible) {
+        
+        aboutSSContent.classList.remove('slide-down');
+        aboutSSContent.classList.add('slide-up');
+
+        
+        aboutSSContent.addEventListener('animationend', () => {
+          aboutSSContent.style.display = 'none';
+        }, { once: true });
+      } else {
+        
+        aboutSSContent.style.display = 'block';
+        aboutSSContent.classList.remove('slide-up');
+        aboutSSContent.classList.add('slide-down');
+        
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const aboutSSContentPosition = aboutSSContent.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: aboutSSContentPosition - navbarHeight,
+          behavior: 'smooth',
+        });
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

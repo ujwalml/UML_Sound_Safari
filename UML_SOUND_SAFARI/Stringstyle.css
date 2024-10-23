@@ -1,0 +1,84 @@
+.v.str {
+  background-image: url('./images/violin.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.v.str:hover {
+  opacity: 0.9;
+}
+
+.i.str {
+  background-image: url('./images/viola.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.i.str:hover {
+  opacity: 0.9;
+}
+
+.c.str {
+  background-image: url('./images/cello.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.c.str:hover {
+  opacity: 0.9;
+}
+
+.d.str {
+  background-image: url('./images/double\ bass.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.d.str:hover {
+  opacity: 0.9;
+}
+
+.h.str {
+  background-image: url('./images/harp.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.h.str:hover {
+  opacity: 0.9;
+}

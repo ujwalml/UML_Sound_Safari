@@ -1,0 +1,152 @@
+.p.key {
+  background-image: url("./images/piano\ \(2\).jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.p.key:hover {
+  opacity: 0.9;
+}
+
+.a.key {
+  background-image: url("./images/accordian.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.a.key:hover {
+  opacity: 0.9;
+}
+
+.h.key {
+  background-image: url("./images/harmonium.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.h.key:hover {
+  opacity: 0.9;
+}
+
+.r.key {
+  background-image: url("./images/harpsichord.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.r.key:hover {
+  opacity: 0.9;
+}
+
+.i.key {
+  background-image: url("./images/pipe\ organ.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.i.key:hover {
+  opacity: 0.9;
+}
+
+.s.key {
+  background-image: url("./images/synthesizer.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.s.key:hover {
+  opacity: 0.9;
+}
+
+.m.key {
+  background-image: url("./images/melodica.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.m.key:hover {
+  opacity: 0.9;
+}
+
+.c.key {
+  background-image: url("./images/celeste.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.c.key:hover {
+  opacity: 0.9;
+}
+
+.u.key {
+  background-image: url("./images/autoharp.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.u.key:hover {
+  opacity: 0.9;
+}

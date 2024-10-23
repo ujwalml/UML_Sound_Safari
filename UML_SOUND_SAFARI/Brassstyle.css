@@ -1,0 +1,67 @@
+.t.brass {
+  background-image: url("./images/trumpet.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.t.brass:hover {
+  opacity: 0.9;
+}
+
+.f.brass {
+  background-image: url("./images/french\ horn.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.f.brass:hover {
+  opacity: 0.9;
+}
+
+.r.brass {
+  background-image: url("./images/trombone.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.r.brass:hover {
+  opacity: 0.9;
+}
+
+.u.brass {
+  background-image: url("./images/tuba.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.u.brass:hover {
+  opacity: 0.9;
+}

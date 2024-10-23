@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE-edge">
+  <meta name="viewport" content="with=device-width, initial-scale=1.0">
+  <link rel="icon" href="./images/Logo.png" type="image/x-icon">
+  <title>KEYBOARD</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="Keyboardstyle.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Aladin&family=Faster+One&family=Niconne&family=Ruslan+Display&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .navbar {
+      background-color: #F4D160;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0;
+    }
+
+
+    .navbar a {
+      color: black !important;
+    }
+
+
+    h1.title,
+    footer {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 3rem;
+      color: #333;
+    }
+
+    a {
+      text-align: center;
+      margin: 20px 0;
+      font-family: 'Ruslan Display', serif;
+      font-size: 1rem;
+    }
+
+    section#title button {
+      color: #333;
+      font-family: 'Aladin', serif;
+    }
+
+
+    h2,
+    h2.text-body-emphasis {
+      text-align: center;
+      font-family: 'Ruslan Display', serif;
+      margin-bottom: 40px;
+      color: #333;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 100px;
+      font-family: 'Aladin', cursive;
+
+    }
+
+    .g-5,
+    .gx-5 {
+      --bs-gutter-x: 0;
+    }
+
+    .accordion-button {
+      background-color: wheat !important;
+      color: #000 !important;
+    }
+
+
+    .accordion-button:not(.collapsed) {
+      background-color: white !important;
+      color: #000 !important;
+    }
+
+    .current-sound {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      font-family: 'Aladin', serif;
+      z-index: 1001;
+      font-size: 1.2rem;
+    }
+
+    .about-content-box.slide-down {
+      display: block;
+      animation: slideDown 0.5s forwards;
+    }
+
+    .about-content-box.slide-up {
+      animation: slideUp 0.5s forwards;
+    }
+
+    @keyframes slideDown {
+      from {
+        max-height: 0;
+        opacity: 0;
+      }
+
+      to {
+        max-height: 1000px;
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        max-height: 1000px;
+        opacity: 1;
+      }
+
+      to {
+        max-height: 0;
+        opacity: 0;
+      }
+    }
+
+    .about-content-box {
+      text-align: justify;
+    }
+
+    #aboutSSButton {
+      font-family: "Ruslan Display", serif;
+    }
+
+    .about-content-box {
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F4D160;
+      border: 1px solid #333;
+      border-radius: 10px;
+      display: none;
+      max-width: 800px;
+    }
+
+    .about-content-box p,
+    li {
+      font-family: "Aladin", serif;
+    }
+
+    h3 {
+      font-family: "Aladin", serif;
+    }
+
+    .container-fluid {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+
+    @media (max-width: 767px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 14px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 370px) {
+      .about-content-box {
+        padding: 10px;
+        font-size: 12px;
+        max-width: 100%;
+        margin: 10px auto;
+      }
+
+      .about-content-box p,
+      .about-content-box ul li {
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .about-content-box ul {
+        padding-left: 20px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      #aboutSSButton {
+        font-family: "Ruslan Display", serif;
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section>
+    <nav class="navbar navbar-expand-lg p-0">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./images/Logo.png" alt="" width="30" height="30" class="pb-1">
+          SOUND SAFARI
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+          </ul>
+          <div class="d-flex justify-content-center">
+            <button class="btn btn-dark" id="aboutSSButton" style="margin-left: 10px;">User Manual</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </section>
+  <section id="title" class="gradient-background">
+    <div class="container col-xxl-8 px-1 py-3">
+      <div class="row flex-lg-row-reverse align-items-center g-5">
+        <div class="col-12 col-sm-12 col-md-6 col-lg-8">
+          <img src="./images/keyboard collection.png" class="d-block mx-lg-auto img-fluid instruments mb-md-4 mt-md-3 "
+            alt="app demo" height="500" loading="lazy">
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5">
+          <h1 class="display-1 fw-bold text-body-emphasis lh-1 mb-0 mt-0 title">KEYBOARD</h1>
+        </div>
+      </div>
+      <div class="container-fluid user">
+        <div class="text-center rounded-3">
+          <div class="about-content-box" id="aboutSSContent">
+            <h2 style="margin: 0%;">Mobile and Tablet Users</h2>
+            <h3>Playing Sounds:</h3>
+            <ul class="abouT">
+              <li>Tap the "PLAY" button corresponding to the instrument you wish to hear.</li>
+              <li>Each instrument has its own "PLAY" button.</li>
+              <li>To stop the sound, tap the "Stop" button next to the currently playing instrument.</li>
+            </ul>
+            <h3>Viewing Current Sound:</h3>
+            <ul class="abouT">
+              <li>The message displayed at the bottom will update to indicate the currently playing sound or if no sound
+                is playing.</li>
+            </ul>
+            <h2 style="margin: 0%;">Desktop and Laptop Users</h2>
+            <h3>Playing Sounds with Mouse Click:</h3>
+            <ul class="abouT">
+              <li>Click on the "PLAY" button next to the instrument to play its sound.</li>
+              <li>Click the "Stop" button next to an instrument to stop the sound.</li>
+            </ul>
+            <h3>Playing Sounds with Keyboard Shortcuts:</h3>
+            <p>Press the following keys on your keyboard to play respective sounds:</p>
+            <ul class="abouT">
+              <li>p: Piano</li>
+              <li>a: Accordion</li>
+              <li>h: Harmonium</li>
+              <li>r: Harpsichord</li>
+              <li>i: Pipe Organ</li>
+              <li>s: Synthesizer</li>
+              <li>m: Melodica</li>
+              <li>c: Celeste</li>
+              <li>u: Autoharp</li>
+            </ul>
+            <h3>Stopping Sounds:</h3>
+            <ul class="abouT">
+              <li>Click the "Stop" button next to the instrument or press any other key other than which is not in the
+                above list.</li>
+            </ul>
+            <h3>Viewing Current Sound:</h3>
+            <ul class="abouT">
+              <li>The text displayed at the bottom will show the currently playing sound or indicate when no sound is
+                playing.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="false" aria-controls="collapseOne">
+              PIANO
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="p key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop p-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Piano is a versatile and beloved keyboard instrument with a rich history
+                dating back centuries. Its origins can be traced to early harpsichords of Europe, and its name is
+                derived from the Italian word "pianoforte," meaning "soft-loud." The piano's complex mechanism allows
+                for a wide dynamic range, from delicate pianissimos to powerful fortissimos, making it capable of
+                expressing a vast array of emotions and musical styles.
+                The piano's keyboard consists of 88 keys, arranged in seven octaves. The left hand plays the bass notes,
+                while the right hand plays the treble notes. The pedals below the keyboard can be used to sustain notes,
+                soften the sound, or add other effects.
+                The piano is a popular instrument for both solo performances and ensemble playing. It is often used to
+                accompany singers and other musicians, and it is a staple in classical, jazz, pop, and rock music. The
+                piano's versatility and expressive capabilities have made it a beloved instrument for musicians and
+                audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+              aria-expanded="false" aria-controls="collapseTwo">
+              ACCORDION
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="a key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop a-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Accordion is a versatile and portable keyboard instrument that is known
+                for its unique sound and ability to provide both melody and harmony. It consists of a box-shaped body
+                with a keyboard on one side and a set of bellows on the other. The bellows are pumped to create air
+                pressure, which drives the reeds that produce the sound.
+                The history of the accordion can be traced back to ancient civilizations, where early forms of
+                bellows-operated instruments were used in various cultures. The modern accordion, with its distinctive
+                shape and construction, emerged in Europe during the 19th century.
+                The accordion is a popular instrument in a wide variety of musical genres, including folk, jazz, pop,
+                and classical music. It is often used to provide accompaniment, melody, and harmony, and it is capable
+                of producing a wide range of sounds. The accordion's versatility, portability, and unique sound have
+                made it a beloved instrument for musicians and audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+              aria-expanded="false" aria-controls="collapseThree">
+              HARMONIUM
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="h key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop h-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Harmonium is a reed organ that is typically played with a keyboard and
+                foot pedals. It produces a similar sound to the organ but is smaller and more portable. The harmonium
+                has a box-shaped body with a keyboard on one side and a set of bellows on the other. The bellows are
+                pumped to create air pressure, which drives the reeds that produce the sound.
+                The history of the harmonium can be traced back to the 19th century, when it was first developed as a
+                more portable and affordable alternative to the pipe organ. The harmonium quickly gained popularity in
+                churches, homes, and schools.
+                The harmonium is a versatile instrument that can be used to accompany singers and other musicians, or to
+                play solo pieces. It is often used in religious music, folk music, and popular music. The harmonium's
+                distinctive sound and portability have made it a beloved instrument for musicians and audiences alike.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+              aria-expanded="false" aria-controls="collapseFour">
+              HARPSICHORD
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="r key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop r-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Harpsichord is a keyboard instrument that produces a bright, plucking
+                sound. It is similar to the piano in appearance, but it lacks the ability to sustain notes and has a
+                more limited dynamic range. The harpsichord has a wooden case with strings that are plucked by quills or
+                leather plectra attached to the ends of the keys.
+                The history of the harpsichord can be traced back to the 14th century, when early forms of harpsichords
+                were used in Europe. The harpsichord was a popular instrument during the Renaissance and Baroque
+                periods, and it was often used to accompany singers and other musicians.
+                The harpsichord is a versatile instrument that can be used in a variety of musical genres, including
+                classical, baroque, and early music. Its distinctive sound and historical significance have made it a
+                beloved instrument for musicians and scholars alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+              aria-expanded="false" aria-controls="collapseFive">
+              PIPE ORGAN
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="i key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop i-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Pipe Organ is a large, complex musical instrument that produces sound
+                through a series of pipes. It is typically played using a keyboard, which controls the flow of air
+                through the pipes. The pipes are arranged in ranks, each with a different timbre and pitch.
+                The history of the pipe organ dates back thousands of years, with evidence of organ-like instruments
+                found in ancient civilizations. The modern pipe organ, with its complex system of pipes, keyboards, and
+                stops, emerged in Europe during the Middle Ages.
+                The pipe organ is a versatile instrument that is used in a wide variety of musical genres, including
+                classical, sacred, and popular music. It is often used to accompany choirs and orchestras, or to play
+                solo pieces. The pipe organ's powerful sound, majestic presence, and historical significance have made
+                it a beloved instrument for musicians and audiences alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix"
+              aria-expanded="false" aria-controls="collapseSix">
+              SYNTHESIZER
+            </button>
+          </h2>
+          <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="s key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop s-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Synthesizer is an electronic musical instrument that can produce a wide
+                range of sounds, from traditional instruments to completely synthetic tones. It consists of a keyboard
+                and a variety of electronic components that generate, modify, and control sound. Synthesizers can be
+                used to create a wide variety of sounds, including traditional instruments, abstract textures, and
+                experimental effects.
+                The history of synthesizers can be traced back to the early 20th century, when the first electronic
+                instruments were developed. The development of synthesizers was greatly influenced by advances in
+                electronic technology, such as the invention of the transistor and the integrated circuit.
+                Synthesizers are used in a wide variety of musical genres, including electronic music, pop, rock, and
+                classical music. They are often used to create unique soundscapes, experiment with new musical forms,
+                and add a technological element to music. The versatility and expressive capabilities of synthesizers
+                have made them a beloved instrument for musicians and producers alike.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSeven"
+              aria-expanded="false" aria-controls="collapseSeven">
+              MELODICA
+            </button>
+          </h2>
+          <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="m key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop m-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Melodica is a small, portable keyboard instrument that is played by
+                blowing into a mouthpiece and pressing the keys. It produces a similar sound to the accordion but is
+                smaller and more lightweight. The melodica has a plastic body with a keyboard on one side and a
+                mouthpiece on the other. The keys are connected to reeds that produce the sound when air is blown
+                through the mouthpiece.
+                The history of the melodica dates back to the 19th century, when it was first developed as a more
+                affordable and portable alternative to the accordion. The melodica quickly gained popularity as a
+                beginner's instrument and as a tool for music education.
+                The melodica is a versatile instrument that can be used in a variety of musical genres, including folk,
+                pop, and classical music. It is often used to accompany singers and other musicians, or to play solo
+                pieces. The melodica's portability, affordability, and ease of use have made it a popular instrument for
+                musicians of all ages and skill levels.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item gradient-background">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEight"
+              aria-expanded="false" aria-controls="collapseEight">
+              AUTOHARP
+            </button>
+          </h2>
+          <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <button class="u key" style="color: #60f4d1;">PLAY</button>
+              <button class="stop u-stop btn btn-danger btn-lg" style="color: white;">Stop</button>
+              <p style="text-align: justify;">Autoharp is a small, portable stringed instrument that is played by
+                plucking the strings with a metal bar. It has a rectangular body with a series of metal bars that run
+                along the length of the instrument. These bars are connected to the strings, and when they are pressed
+                down, they shorten the strings, changing the pitch.
+                The history of the autoharp dates back to the 19th century, when it was first developed as a more
+                affordable and portable alternative to the piano. The autoharp quickly gained popularity as a beginner's
+                instrument and as a tool for music education.
+                The autoharp is a versatile instrument that can be used in a variety of musical genres, including folk,
+                pop, and country music. It is often used to provide accompaniment, melody, and harmony, and it is
+                capable of producing a wide range of sounds. The autoharp's portability, affordability, and ease of use
+                have made it a popular instrument for musicians of all ages and skill levels.</p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="current-sound">No sound is playing</div>
+      <footer>UJWAL M L ✏️</footer>
+  </section>
+  <script>
+    var sounds = {};
+    var currentSound = null;
+
+
+    for (var i = 0; i < document.querySelectorAll(".key").length; i++) {
+      document
+        .querySelectorAll(".key")
+      [i].addEventListener("click", function () {
+        var buttonClass = this.classList[0];
+        makesound(buttonClass);
+        buttonAnimation(buttonClass);
+      });
+    }
+
+
+    for (var i = 0; i < document.querySelectorAll(".stop").length; i++) {
+      document
+        .querySelectorAll(".stop")
+      [i].addEventListener("click", function () {
+        var stopClass = this.classList[1].split("-")[0];
+        stopSound(stopClass);
+      });
+    }
+
+
+    document.addEventListener("keypress", function (event) {
+      makesound(event.key);
+      buttonAnimation(event.key);
+    });
+
+    function makesound(key) {
+
+      if (currentSound) {
+        currentSound.pause();
+        currentSound.currentTime = 0;
+      }
+
+
+      if (sounds[key]) {
+        sounds[key].pause();
+        sounds[key].currentTime = 0;
+      }
+      var soundName = "";
+
+      switch (key) {
+        case "p":
+          sounds[key] = new Audio("./Keyboard/piano (2).mp3");
+          soundName = "Piano";
+          break;
+        case "a":
+          sounds[key] = new Audio("./Keyboard/accordion.mp3");
+          soundName = "Accordian";
+          break;
+        case "h":
+          sounds[key] = new Audio("./Keyboard/harmonium.mp3");
+          soundName = "Harmonium";
+          break;
+        case "r":
+          sounds[key] = new Audio("./Keyboard/harpsichord.mp3");
+          soundName = "Harpsichord";
+          break;
+        case "i":
+          sounds[key] = new Audio("./Keyboard/pipe organ.mp3");
+          soundName = "Pipe Organ";
+          break;
+        case "s":
+          sounds[key] = new Audio("./Keyboard/synthesizer.mp3");
+          soundName = "Synthesizer";
+          break;
+        case "m":
+          sounds[key] = new Audio("./Keyboard/melodica.mp3");
+          soundName = "Melodica";
+          break;
+        case "c":
+          sounds[key] = new Audio("./Keyboard/celeste.mp3");
+          soundName = "Celeste";
+          break;
+        case "u":
+          sounds[key] = new Audio("./Keyboard/autoharp.mp3");
+          soundName = "Autoharp";
+          break;
+        default:
+
+          if (currentSound) {
+            currentSound.pause();
+            currentSound.currentTime = 0;
+          }
+          currentSound = null;
+          document.querySelector(".current-sound").textContent = "No sound is playing";
+          return;
+      }
+
+
+      currentSound = sounds[key];
+      currentSound.play();
+      document.querySelector(".current-sound").textContent = "Now playing: " + soundName;
+
+
+      currentSound.addEventListener("ended", function () {
+        document.querySelector(".current-sound").textContent = "No sound is playing";
+      });
+    }
+
+
+    function stopSound(key) {
+      if (sounds[key]) {
+        sounds[key].pause();
+        sounds[key].currentTime = 0;
+
+        if (currentSound === sounds[key]) {
+          document.querySelector(".current-sound").textContent = "No sound is playing";
+          currentSound = null;
+        }
+      }
+    }
+
+
+    function buttonAnimation(currentKey) {
+      var activeButton = document.querySelector("." + currentKey);
+      if (activeButton) {
+        activeButton.classList.add("pressed");
+
+        setTimeout(function () {
+          activeButton.classList.remove("pressed");
+        }, 100);
+      }
+    }
+  </script>
+  <script>
+
+    const aboutSSButton = document.getElementById('aboutSSButton');
+    const aboutSSContent = document.getElementById('aboutSSContent');
+
+    aboutSSButton.addEventListener('click', () => {
+
+      const isVisible = aboutSSContent.style.display === 'block';
+
+      if (isVisible) {
+
+        aboutSSContent.classList.remove('slide-down');
+        aboutSSContent.classList.add('slide-up');
+
+
+        aboutSSContent.addEventListener('animationend', () => {
+          aboutSSContent.style.display = 'none';
+        }, { once: true });
+      } else {
+
+        aboutSSContent.style.display = 'block';
+        aboutSSContent.classList.remove('slide-up');
+        aboutSSContent.classList.add('slide-down');
+
+        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+        const aboutSSContentPosition = aboutSSContent.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({
+          top: aboutSSContentPosition - navbarHeight,
+          behavior: 'smooth',
+        });
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
